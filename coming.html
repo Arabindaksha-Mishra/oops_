@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./icon-mini.svg">
+    <title>Coming Soon</title>
+    <style>
+        body {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            background-color: rgb(245, 237, 225);
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            /* overflow: hidden; */
+        }
+
+        .title {
+            animation: typewriter 2s steps(10) infinite alternate, blink 0.5s steps(10) infinite;
+        }
+
+        .msg {
+            font-size: 4rem;
+            color: #444;
+            font-weight: bold;
+            font-family: sans-serif;
+            width: 100%;
+
+        }
+
+        .show {
+            display: none;
+        }
+
+        @media screen and (max-width:1020px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .hide {
+                display: none;
+            }
+
+            .show {
+                display: block;
+                text-align: center;
+            }
+            .img{
+                width: 100%;
+                /* height: 50vh; */
+                /* transform: scale(2); */
+            }
+
+        }
+        @media screen and (max-width:560px) {
+            .img{
+                transform: scale(2);
+            }
+            
+        }
+
+        @keyframes typewriter {
+            0% {
+                width: 0px;
+            }
+
+            100% {
+                width: 240px;
+            }
+        }
+
+        .ref-link {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            /* text-align: center; */
+            align-items: center;
+            width: 100%;
+            position: fixed; 
+             bottom: 2rem;
+            /* padding-right: 20%; */
+        }
+
+        .link {
+            cursor: pointer;
+        }
+        .img{
+            width:50%;
+        }
+
+        .msg::after {
+            content: '...';
+            position: relative;
+            /* font-size: 2rem;
+            background-color: #000;
+            width: 3rem;
+            height: 2rem; */
+            animation: dot 2s linear infinite;
+        }
+
+        @keyframes dot {
+            0% {
+                content: '';
+            }
+
+            30% {
+                content: '.';
+            }
+
+            60% {
+                content: '..';
+            }
+
+            90% {
+                content: '...   ';
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <img src="./logo.svg" class="img" />
+        <!-- <spna class="msg"></spna> -->
+        <!-- <div class="title"> -->
+        <span  class="msg hide"><span style="color: rgba(0,0,0,0.4);">|</span> Coming Soon</span>
+        <span style="padding: fixed; right: 0;" class="msg show">Coming Soon</span>
+        <!-- </div> -->
+    </div>
+    <div class="ref-link">
+        <h4> Want To Learn More? &nbsp;
+            <span class="link" style="color: blue;" onclick='window.open("https://forms.gle/h8HGugjQcHTnmLN36")'>Click
+                Here</span>
+        </h4>
+
+
+    </div>
+</body>
+
+</html>
